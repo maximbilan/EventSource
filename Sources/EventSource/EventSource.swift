@@ -139,7 +139,7 @@ public extension EventSource {
         }
 
         private var urlSessionConfiguration: URLSessionConfiguration {
-            let configuration = URLSessionConfiguration.default
+            let configuration = URLSessionConfiguration.background(withIdentifier: "\(UUID().uuidString)")
             configuration.httpAdditionalHeaders = [
                 HTTPHeaderField.accept: Accept.eventStream,
                 HTTPHeaderField.cacheControl: CacheControl.noStore,
